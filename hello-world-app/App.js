@@ -8,6 +8,8 @@ import {
   TextInput, 
   Button} from 'react-native';
 
+  import MyButton from './components/MyButton.js'
+
 export default function App() {
   const [ input, setInput ] = useState('')
   const [ color, setColor ] = useState('red')
@@ -24,9 +26,9 @@ export default function App() {
       style={styles.input}></TextInput>
       <Text style={{fontSize: 18, marginTop: 20, color: color}}>{input}</Text>
       <View style={styles.buttonLayout}>
-        <Button title="Red" color="red" onPress={() => {setColor('red')}}></Button>
-        <Button title="Blue" color="blue" onPress={() => {setColor('blue')}}></Button>
-        <Button title="Green" color="green" onPress={() => {setColor('green')}}></Button>
+        <MyButton title="Red"  color="red" onChangeColor={ (color) => {setColor(color )}}/>
+        <MyButton title="Blue"  color="blue" onChangeColor={ (color) => {setColor(color )}}/>
+        <MyButton title="Green"  color="green" onChangeColor={ (color) => {setColor(color )}}/>
       </View>
     </View>
   );
